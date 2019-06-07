@@ -99,9 +99,15 @@
                     </ul>
                     
                     <div class="post-content ">
-                        
+                        <h2 id="程序目的："><a href="#程序目的：" class="headerlink" title="程序目的："></a>程序目的：</h2><p>通过Python定时爬取google-patent，更新公司专利信息。</p>
+<h2 id="程序流程："><a href="#程序流程：" class="headerlink" title="程序流程："></a>程序流程：</h2><ol>
+<li>读取Mysql公司列表、专利列表；</li>
+<li>构建url，根据公司名查询相关专利；</li>
+<li>直接通过google-patent下载链接下载csv文件；</li>
+<li>读取csv，与库里已有数据取差集，插入数据库；</li>
+<li>根据专利号，爬取专利详情页的专利简介、专利分类号，更新数据库相关列；
                             <a href="/2019/06/06/谷歌专利爬虫/" class="more-link">Continue reading</a>
-                    </div>
+                    </li></ol></div>
         </article>
         
 </section>

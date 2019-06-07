@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="hexo, autumn">
+    <title>
+        fanning1207&#39;s blog
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            fanning1207&#39;s blog
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/FrontendSophie">
+                        Github
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.linkedin.com/in/frontendsophie/">
+                        LinkedIn
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+    
+    
+    <h2 class="post-title">
+        NumPy基础
+    </h2>
+    <ul class="post-date">
+        <li>
+            2019-06-08
+        </li>
+        <li>
+            fanning1207
+        </li>
+    </ul>
+    <div class="post-content">
+        <p>​    NumPy库主要用于多维数组计算。NumPy这个词来源于两个单词– Numerical和Python。</p>
+<p>​    NumPy的主要应用领域：</p>
+<ol>
+<li><p>机器学习模型：机器学习中常涉及到矩阵计算，这是NumPy非常擅长的领域。（常用算法中应该已经封装好了其实）</p>
+</li>
+<li><p>图像处理和计算机图形学：计算机中的图像在处理过程中被表示为多维数字数组，这显然是NumPy的领域。NumPy提供了一些优秀的库函数来快速处理图像，例如，镜像图像、按特定角度旋转图像等，这是目前比较流行的应用。（可以想象，这块的数据处理会令人比较头秃）</p>
+</li>
+<li><p>数学任务：NumPy对于执行各种数学任务非常有用，如数值积分、微分、内插、外推等。因此，当涉及到数学任务时，它形成了一种基于Python的MATLAB的快速替代。</p>
+<a id="more"></a>
+
+</li>
+</ol>
+<h2 id="NumPy中的数组"><a href="#NumPy中的数组" class="headerlink" title="NumPy中的数组"></a>NumPy中的数组</h2><p>定义一维NumPy数组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_array = np.array(range(<span class="number">5</span>)) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_array</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_new_array = np.zeros((<span class="number">5</span>)) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_new_array </span><br><span class="line">array([<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>])</span><br><span class="line"><span class="comment">#定义一个全为0的数组</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_new_array = np.ones((<span class="number">5</span>)) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_new_array </span><br><span class="line">array([<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>])</span><br><span class="line"><span class="comment">#定义一个全为1的数组</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_random_array = np.random.random((<span class="number">5</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_random_array</span><br><span class="line">array([<span class="number">0.99976335</span>, <span class="number">0.25763338</span>, <span class="number">0.69991244</span>, <span class="number">0.42222535</span>, <span class="number">0.51741361</span>])</span><br><span class="line"><span class="comment">#定义一个0-1之间的随机数组</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[int(round(x)) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="number">10</span>*np.random.random((<span class="number">5</span>))]</span><br><span class="line"><span class="comment">#随机生成0-10之间的随机数（这方法太不咋地了）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.choices(range(<span class="number">10</span>),k=<span class="number">6</span>,weights=range(<span class="number">10</span>)) <span class="comment">#weights表示权重</span></span><br><span class="line"><span class="comment">#生成随机数（重复）</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.sample(range(<span class="number">1</span>,<span class="number">34</span>),<span class="number">6</span>)</span><br><span class="line"><span class="comment">#生成随机数（不重复）</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+</article>
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/crawler/">crawler</a></li></ul>
+
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>

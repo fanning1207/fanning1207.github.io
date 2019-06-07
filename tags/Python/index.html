@@ -77,6 +77,60 @@
     
         <article class="post">
             
+                    <h1 class="post-title">
+                        <a href="/2019/06/08/numpy常用函数/">
+                            NumPy基础
+                        </a>
+                    </h1>
+
+                    <ul class="post-date">
+                        <li>
+                            2019年6月8日
+                        </li>
+                        <li>
+                            fanning1207
+                        </li>
+                    </ul>
+                    
+                    <div class="post-content ">
+                        <p>​    NumPy库主要用于多维数组计算。NumPy这个词来源于两个单词– Numerical和Python。</p>
+<p>​    NumPy的主要应用领域：</p>
+<ol>
+<li><p>机器学习模型：机器学习中常涉及到矩阵计算，这是NumPy非常擅长的领域。（常用算法中应该已经封装好了其实）</p>
+</li>
+<li><p>图像处理和计算机图形学：计算机中的图像在处理过程中被表示为多维数字数组，这显然是NumPy的领域。NumPy提供了一些优秀的库函数来快速处理图像，例如，镜像图像、按特定角度旋转图像等，这是目前比较流行的应用。（可以想象，这块的数据处理会令人比较头秃）</p>
+</li>
+<li><p>数学任务：NumPy对于执行各种数学任务非常有用，如数值积分、微分、内插、外推等。因此，当涉及到数学任务时，它形成了一种基于Python的MATLAB的快速替代。</p>
+                            <a href="/2019/06/08/numpy常用函数/" class="more-link">Continue reading</a>
+                    </li></ol></div>
+        </article>
+        
+        <article class="post">
+            
+                    <h1 class="post-title">
+                        <a href="/2019/06/08/Python中的推导式/">
+                            Python中的推导式
+                        </a>
+                    </h1>
+
+                    <ul class="post-date">
+                        <li>
+                            2019年6月8日
+                        </li>
+                        <li>
+                            fanning1207
+                        </li>
+                    </ul>
+                    
+                    <div class="post-content ">
+                        <p>​    推导式 comprehensions又称解析式，是可以从一个数据序列构建另一个新的数据序列的结构体。很多简单的循环都可以用推导式来代替。</p>
+<p>​    Python中的推导式包括：1）列表推导式；2）字典推导式；3）集合推导式；4）嵌套列表推导式。</p>
+                            <a href="/2019/06/08/Python中的推导式/" class="more-link">Continue reading</a>
+                    </div>
+        </article>
+        
+        <article class="post">
+            
                 <h4 class="post-cat">
                     <a href="/categories/crawler/">
                         crawler
@@ -99,9 +153,15 @@
                     </ul>
                     
                     <div class="post-content ">
-                        
+                        <h2 id="程序目的："><a href="#程序目的：" class="headerlink" title="程序目的："></a>程序目的：</h2><p>通过Python定时爬取google-patent，更新公司专利信息。</p>
+<h2 id="程序流程："><a href="#程序流程：" class="headerlink" title="程序流程："></a>程序流程：</h2><ol>
+<li>读取Mysql公司列表、专利列表；</li>
+<li>构建url，根据公司名查询相关专利；</li>
+<li>直接通过google-patent下载链接下载csv文件；</li>
+<li>读取csv，与库里已有数据取差集，插入数据库；</li>
+<li>根据专利号，爬取专利详情页的专利简介、专利分类号，更新数据库相关列；
                             <a href="/2019/06/06/谷歌专利爬虫/" class="more-link">Continue reading</a>
-                    </div>
+                    </li></ol></div>
         </article>
         
 </section>
