@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="hexo, autumn">
+    <title>
+        fanning1207&#39;s blog
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            fanning1207&#39;s blog
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/FrontendSophie">
+                        Github
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.linkedin.com/in/frontendsophie/">
+                        LinkedIn
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/函数大全/">
+            函数大全
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        Pandas常用函数
+    </h2>
+    <ul class="post-date">
+        <li>
+            2019-06-08
+        </li>
+        <li>
+            fanning1207
+        </li>
+    </ul>
+    <div class="post-content">
+        <p>​    Pandas 是基于 NumPy 的一个开源 Python 库，它是Python下用于数据分析的主要库。它的名字来源是“ Panel data”。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+<h2 id="Pandas的数据结构"><a href="#Pandas的数据结构" class="headerlink" title="Pandas的数据结构"></a>Pandas的数据结构</h2><ol>
+<li><p><strong>Series</strong></p>
+<p>Series 是一种一维数组，和 NumPy 里的数组很相似。事实上，Series 基本上就是基于 NumPy 的数组对象来的。</p>
+<p>和 NumPy 的数组不同，Series 能为数据自定义标签，也就是索引（index），然后通过索引来访问数组中的数据。</p>
+<p>创建数组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd.Series(range(<span class="number">3</span>))</span><br><span class="line"><span class="number">0</span>    <span class="number">0</span></span><br><span class="line"><span class="number">1</span>    <span class="number">1</span></span><br><span class="line"><span class="number">2</span>    <span class="number">2</span></span><br><span class="line">dtype: int64</span><br><span class="line"><span class="comment">#索引默认从0开始</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd.Series(&#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;)</span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">dtype: int64</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd.Series(&#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;) + <span class="number">1</span></span><br><span class="line">a    <span class="number">2</span></span><br><span class="line">b    <span class="number">3</span></span><br><span class="line">dtype: int64</span><br><span class="line">&gt;&gt;&gt;pd.Series(&#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;)+pd.Series(&#123;<span class="string">'b'</span>:<span class="number">11</span>,<span class="string">'a'</span>:<span class="number">9</span>&#125;)</span><br><span class="line">a    <span class="number">10</span></span><br><span class="line">b    <span class="number">13</span></span><br><span class="line">dtype: int64</span><br><span class="line"><span class="comment">#运算会根据索引</span></span><br><span class="line"><span class="comment">#如果 Pandas 在两个Series里找不到相同的index，对应的位置就返回一个空值 NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>和 NumPy 数组不同，Pandas 的 Series 能存放各种不同类型的对象。</p>
+<p>对 Series 的算术运算都是基于 index 进行的。我们可以用加减乘除运算符对两个 Series 进行运算，Pandas 将会根据索引 index，对响应的数据进行计算，结果将会以浮点数的形式存储，以避免丢失精度。</p>
+</li>
+<li><p><strong>DataFrames</strong></p>
+<p>Pandas 的 DataFrame是一种二维数据结构，数据以表格的形式存储，分成若干行和列。（并没有R的data.frame好用）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data = pd.DataFrame(&#123;<span class="string">'name'</span>:[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>],<span class="string">'age'</span>:[<span class="number">11</span>,<span class="number">5</span>,<span class="number">13</span>]&#125;)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data </span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>==注意：Pandas 的 DataFrame不支持data[m,n]这种取数方式!!!==</strong></p>
+</li>
+</ol>
+<p>   按列取数：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data[<span class="string">'name'</span>]</span><br><span class="line"><span class="number">0</span>    a</span><br><span class="line"><span class="number">1</span>    b</span><br><span class="line"><span class="number">2</span>    c</span><br><span class="line">Name: name, dtype: object</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data[[<span class="string">'name'</span>,<span class="string">'age'</span>]]</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br><span class="line"><span class="comment">#注意这里的双重方括号</span></span><br></pre></td></tr></table></figure>
+
+<p>   按行取数：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br><span class="line"><span class="comment">#注意pd_data[1]是不行的，必须pd_data[1:2]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data[pd_data.age&gt;<span class="number">5</span>]</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data.ix[:<span class="number">2</span>]</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br><span class="line"><span class="comment">#ix则可以使用下标选择，也可以用名称,这个功能已渐渐退出了</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data.loc[:<span class="number">2</span>]</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>    c   <span class="number">13</span></span><br><span class="line"><span class="comment">#loc是根据名称选择，需要用索引名称</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data.iloc[:<span class="number">2</span>] </span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="comment">#iloc是根据位置选择，需要用数字</span></span><br></pre></td></tr></table></figure>
+
+<p>   删除：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data.drop(<span class="string">'name'</span>,axis=<span class="number">1</span>) </span><br><span class="line">   age</span><br><span class="line"><span class="number">0</span>   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    <span class="number">5</span></span><br><span class="line"><span class="number">2</span>   <span class="number">13</span></span><br><span class="line"><span class="comment">#删除列</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pd_data.drop(<span class="number">2</span>,axis=<span class="number">0</span>)</span><br><span class="line">  name  age</span><br><span class="line"><span class="number">0</span>    a   <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    b    <span class="number">5</span></span><br><span class="line"><span class="comment">#删除行</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+</article>
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/crawler/">crawler</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/函数大全/">函数大全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/函数大全/">函数大全</a></li></ul></li></ul>
+
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">2019-6</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>
